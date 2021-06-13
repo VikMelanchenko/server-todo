@@ -28,7 +28,7 @@ router.post('/', async (req, res, next) => {
   try {
     const task = await Tasks.addTask(req.body);
 
-    if (!task.title || !task.text) {
+    if (!task.title || !task.deadline || !task.subtitle || !task.text) {
       return res.status(400).json({ message: 'missing required name field' });
     }
 
