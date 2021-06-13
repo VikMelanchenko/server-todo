@@ -28,7 +28,7 @@ app.use((_req, res) => {
 });
 
 app.use((err, _req, res, _next) => {
-  res.status(err.status || 500).json({
+  res.status(err.status || 404).json({
     status: 'fail',
     code: 500,
     message: err.message,

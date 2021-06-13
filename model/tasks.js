@@ -37,7 +37,6 @@ const addTask = async (body) => {
   const id = uuid();
   const data = await fs.readFile(tasksPath, 'utf-8');
   const tasks = JSON.parse(data);
-  // const id = tasks.length + 1;
   const newTask = {
     id,
     ...body,
