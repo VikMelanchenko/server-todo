@@ -1,0 +1,41 @@
+{
+  "name": "server-todo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./bin/server.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon ./bin/server.js",
+    "lint": "eslint --fix **/*.js",
+    "lint:fix": "eslint --fix **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VikMelanchenko/server-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VikMelanchenko/server-todo/issues"
+  },
+  "homepage": "https://github.com/VikMelanchenko/server-todo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "10.0.0",
+    "eslint": "^7.28.0",
+    "express": "4.17.1",
+    "express-validator": "6.11.1",
+    "got": "11.8.2",
+    "joi": "17.4.0",
+    "lowdb": "2.1.0",
+    "morgan": "1.10.0",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
+  }
+}
