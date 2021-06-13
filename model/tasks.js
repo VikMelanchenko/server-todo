@@ -34,10 +34,10 @@ const removeTask = async (taskId) => {
 };
 
 const addTask = async (body) => {
-  // const id = uuid().Number();
+  const id = uuid();
   const data = await fs.readFile(tasksPath, 'utf-8');
   const tasks = JSON.parse(data);
-  const id = tasks.length + 1;
+  // const id = tasks.length + 1;
   const newTask = {
     id,
     ...body,
