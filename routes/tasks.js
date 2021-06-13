@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Tasks = require('../model/tasks');
-// const validate = require('./validation');
+const validate = require('./validation');
 
 router.get('/', async (_req, res, next) => {
   try {
@@ -24,7 +24,7 @@ router.get('/:taskId', async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', validate.addTask, async (req, res, next) => {
   try {
     const task = await Tasks.addTask(req.body);
 
@@ -50,7 +50,7 @@ router.delete('/:taskId', async (req, res, next) => {
   }
 });
 
-router.patch('/:taskId', async (req, res, next) => {
+router.patch('/:taskId', validate.updateTask, async (req, res, next) => {
   try {
     const { taskId } = req.params;
     const result = await Tasks.getTaskById(taskId, next);
